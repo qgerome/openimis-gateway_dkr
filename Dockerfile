@@ -13,8 +13,8 @@ RUN mkdir -p /etc/ssl/certs
 RUN mkdir -p /etc/ssl/private
 COPY conf/openimis.conf /script/default.conf
 #COPY conf/openimis.conf /etc/nginx/conf.d/default.conf
-ENV NEW_OPENIMIS_HOST = ""
-ENV LEGACY_OPENIMIS_HOST = ""
+ENV NEW_OPENIMIS_HOST = host.docker.internal:8000
+ENV LEGACY_OPENIMIS_HOST = legacy.demo.openimis.org
 COPY script /script
 
 RUN chmod a+x /script/entrypoint.sh
